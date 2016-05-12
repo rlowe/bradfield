@@ -1,0 +1,21 @@
+PROBLEM STATEMENT
+=================
+
+Given an array of courses and their prerequisites, find an order to take the classes in such that no class will be taken without satisfying the prerequisites first.  If there is a cyclic dependency (i.e. Course B is a prerequisite for Course A and Course A is a prerequisite for Course B), throw an error that includes the dependencies.
+
+Sample Input:
+
+[ [ 1, 2 ],
+  [ 2, 3 ]
+]
+
+Expected Output:
+
+[ 3, 2, 1 ]
+
+NOTES
+=====
+
+The input is essentially an edge list, which does not support Depth First Search 
+
+
