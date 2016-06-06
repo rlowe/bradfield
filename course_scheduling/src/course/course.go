@@ -3,29 +3,12 @@ package course
 import (
   "errors"
   "fmt"
-  //"reflect"
+  "util"
 )
-
-func EListToAList(elist [][]int) map[int][]int {
-  alist := make(map[int][]int)
-  for _, a := range elist {
-    l := a[0]
-    r := a[1]
-    if _, ok := alist[r]; !ok {
-      alist[r] = []int{}
-    }
-    if _, ok := alist[l]; !ok {
-      alist[l] = []int{}
-    }
-
-    alist[l] = append(alist[l], r)
-  }
-  return alist
-}
 
 func TopOrder(elist [][]int) ([]int, error) {
   // +1 to the number of iterations that have to be done
-  alist := EListToAList(elist)
+  alist := util.EListToAList(elist)
 
   // Keys from alist
   // var sortQueue = keys(alist)

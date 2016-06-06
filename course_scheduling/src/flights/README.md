@@ -1,3 +1,12 @@
+package flights
+
+import (
+  "errors"
+)
+
+func fewestHops(connectedAirports [][]string) ([]string, error) {
+
+}
 1) do this unweighted
 2) breadth first search for weighted graphs :-)
 
@@ -16,7 +25,7 @@ sfo, iah
 foo, iah
 ord, iah
 iah, lga
-iag, mia
+iah, mia
 ord, mia
 
 convert to alist

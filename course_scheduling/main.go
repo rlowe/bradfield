@@ -1,24 +1,20 @@
 package main
 
 import (
-  "course"
   "fmt"
+  "wordladder"
+  "wordladder/err"
 )
 
 func main() {
-  courseList := [][]int {
-    {1,2},
-    {2,3},
-    {2,4},
-    {4,5},
-    //{5,4},
-  }
+  wordList := []string {"bot","cig", "cog", "dit", "dut", "hot", "hit" ,"dot","dog","lot","log"}
 
-  order, err := course.TopOrder(courseList)
-  if err != nil {
-    fmt.Println(err)
-    return
+  shortestPath, er := wordladder.FewestHops("hit", "aaa", wordList)
+  if er != nil {
+    if wle, ok := er.(*err.Error); ok {
+      fmt.Printf("Error %d: %s", wle.ErrCode, wle.ErrMsg)
+    }
+  } else {
+    fmt.Println(shortestPath)
   }
-
-  fmt.Println("ORDER:",order)
 }
